@@ -80,13 +80,12 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:800; line-height:1.1; let
 }
 
 /* ---------- brand mark ---------- */
-.mark{ display:inline-flex; align-items:flex-end; gap:.5rem; text-decoration:none; color:var(--tinta); line-height:1; }
-.mark-icon{ width:34px; height:34px; flex-shrink:0; }
-.mark-word{ display:flex; flex-direction:column; }
-.mark-script{ font-family:var(--font-script); font-size:2rem; line-height:.7; color:var(--tinta); margin-bottom:.3rem; }
-.mark-tagline{ font-family:var(--font-body); font-size:.56rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--steel); }
-footer .mark-script{ color:var(--crema); }
-footer .mark-tagline{ color:var(--sage); }
+.mark{ display:inline-flex; align-items:center; text-decoration:none; line-height:1; }
+.logo-full{ height:38px; width:auto; display:block; }
+.footer-mark{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+.logo-wordmark{ height:34px; width:auto; display:block; }
+.footer-mark-tagline{ font-family:var(--font-body); font-size:.66rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--sage); }
+@media (min-width:480px){ .logo-full{ height:44px; } }
 
 /* ---------- buttons ---------- */
 .btn{
@@ -165,7 +164,7 @@ header{
 .hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:1.1rem; }
 .hero-hint{ font-size:.86rem; color:var(--tinta-suave); }
 
-.hero-swoosh{ width:64px; height:64px; margin-bottom:1.3rem; }
+.hero-swoosh{ height:58px; width:auto; margin-bottom:1.3rem; }
 .hero-media{ position:relative; }
 .hero-media-frame{
   position:relative; border-radius:var(--radius); overflow:hidden;
@@ -309,12 +308,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 <header>
   <div class="container nav">
     <a href="#main" class="mark">
-      <svg class="mark-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M9 53C9 35 23 15 33 23" stroke="#9DAEAB" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
-        <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
-      </svg>
-      <span class="mark-word"><span class="mark-script">Cekim</span><span class="mark-tagline">Salud &amp; Movimiento</span></span>
+      <img src="assets/cekim-logo.png" alt="CEKIM — Salud &amp; Movimiento" class="logo-full">
     </a>
     <ul class="nav-links">
       <li><a href="#diferencia">Nuestra mirada</a></li>
@@ -348,11 +342,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy reveal">
-      <svg class="hero-swoosh" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M9 53C9 35 23 15 33 23" stroke="#9DAEAB" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
-        <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
-      </svg>
+      <img src="assets/cekim-mark.png" alt="" class="hero-swoosh" aria-hidden="true">
       <p class="eyebrow">Centro de Salud y Movimiento · Turdera</p>
       <h1>Tu cuerpo no funciona por partes. Funciona como <em>un sistema.</em></h1>
       <p class="lede">En CEKIM acompañamos ese sistema completo: prevención, rehabilitación, movimiento, salud mental y nutrición, con un equipo que trabaja coordinado. No hace falta estar lesionado para empezar — ni tener experiencia previa.</p>
@@ -476,14 +466,10 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#main" class="mark">
-      <svg class="mark-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M9 53C9 35 23 15 33 23" stroke="#9DAEAB" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
-        <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
-      </svg>
-      <span class="mark-word"><span class="mark-script">Cekim</span><span class="mark-tagline">Salud &amp; Movimiento</span></span>
-    </a>
+        <a href="#main" class="mark footer-mark">
+          <img src="assets/cekim-wordmark.png" alt="CEKIM" class="logo-wordmark">
+          <span class="footer-mark-tagline">Salud &amp; Movimiento</span>
+        </a>
         <p class="footer-tagline">Salud integral. Movimiento con criterio. Cada cuerpo es único.</p>
       </div>
       <div class="footer-cols">
