@@ -32,7 +32,7 @@
   --font-display: 'Manrope', sans-serif;
   --font-script: 'Caveat', cursive;
   --font-body: 'Montserrat', sans-serif;
-  --radius: 3px;
+  --radius: 10px;
   --ease: cubic-bezier(.22,.61,.36,1);
 }
 
@@ -150,7 +150,7 @@ header{
   border:1px solid var(--borde);
   border-radius:22px;
   padding:1.5rem;
-  box-shadow:0 40px 70px -40px rgba(20,26,28,.25);
+  box-shadow:0 22px 40px -32px rgba(20,26,28,.22);
 }
 @media (max-width:600px){ .hero-frame{ padding:1rem; border-radius:18px; } }
 .hero-banner{
@@ -209,8 +209,13 @@ header{
   background:var(--verde-oscuro); color:var(--crema);
   padding:5rem 0; position:relative; overflow:hidden;
 }
+.audience-watermark{
+  position:absolute; top:-4rem; right:-3rem; width:22rem; height:auto;
+  opacity:.07; pointer-events:none; z-index:0;
+}
+.audience .container{ position:relative; z-index:1; }
 .audience-head{ max-width:34rem; margin-bottom:2.8rem; }
-.audience-head h2{ color:var(--crema); font-size:clamp(1.7rem,3.6vw,2.5rem); }
+.audience-head h2{ color:var(--crema); font-size:clamp(1.85rem,3.9vw,2.7rem); }
 .audience-list{ display:grid; grid-template-columns:1fr; gap:0; max-width:46rem; }
 @media (min-width:720px){ .audience-list{ grid-template-columns:1fr 1fr; gap:0 3rem; } }
 .audience-item{ margin-bottom:2.2rem; }
@@ -227,7 +232,7 @@ header{
 .team{ padding:5.5rem 0; }
 .team-grid{ display:grid; grid-template-columns:1fr; gap:2.6rem; align-items:center; }
 @media (min-width:920px){ .team-grid{ grid-template-columns:.9fr 1.1fr; gap:3.5rem; } }
-.team-media{ border-radius:var(--radius); overflow:hidden; aspect-ratio:3/4; }
+.team-media{ border-radius:var(--radius); overflow:hidden; aspect-ratio:3/4; border:1px solid var(--borde); }
 .team-media img{ width:100%; height:100%; object-fit:cover; object-position:center 20%; }
 .team-copy h2{ font-size:clamp(1.7rem,3.6vw,2.4rem); margin-bottom:1.2rem; max-width:20ch; }
 .team-copy p{ color:var(--tinta-suave); font-size:1.06rem; margin-bottom:1.1rem; max-width:34rem; }
@@ -247,13 +252,17 @@ header{
   border:1.5px solid var(--verde); color:var(--verde-oscuro); font-weight:600; font-size:.85rem;
   padding:.45rem .95rem; border-radius:999px;
 }
-.community-media{ border-radius:var(--radius); overflow:hidden; aspect-ratio:4/5; }
+.community-media{ border-radius:var(--radius); overflow:hidden; aspect-ratio:4/5; border:1px solid var(--borde); }
 .community-media img{ width:100%; height:100%; object-fit:cover; object-position:center 25%; }
 
 /* ================= CTA FINAL ================= */
 .cta-final{
   background:var(--verde); color:var(--crema);
   padding:5rem 0; text-align:center; position:relative; overflow:hidden;
+}
+.cta-final-watermark{
+  position:absolute; bottom:-3rem; left:-2.5rem; width:18rem; height:auto;
+  opacity:.09; pointer-events:none; z-index:0; transform:scaleX(-1);
 }
 .cta-final .container{ position:relative; z-index:1; max-width:42rem; }
 .cta-final h2{ color:var(--crema); font-size:clamp(1.9rem,4.4vw,2.8rem); margin-bottom:1.1rem; }
@@ -395,6 +404,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 
 <!-- ============ A QUIÉN ACOMPAÑAMOS ============ -->
 <section class="audience" id="acompanamos">
+  <img src="assets/cekim-mark.png" alt="" class="audience-watermark" aria-hidden="true">
   <div class="container">
     <div class="audience-head reveal">
       <h2>¿Te reconocés en alguna de estas historias? Hay un lugar para vos, sea cual sea tu punto de partida.</h2>
@@ -443,6 +453,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 
 <!-- ============ CTA FINAL ============ -->
 <section class="cta-final">
+  <img src="assets/cekim-mark.png" alt="" class="cta-final-watermark" aria-hidden="true">
   <div class="container reveal">
     <h2>El primer paso no tiene que ser grande.</h2>
     <p>Contanos cómo estás y en qué etapa te encontrás. Te ayudamos a ver por dónde empezar — sin presión y sin compromiso.</p>
