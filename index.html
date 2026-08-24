@@ -8,19 +8,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Alex+Brush&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root{
-  --verde: #2D6A4F;
-  --verde-oscuro: #1E4A36;
-  --amarillo: #F4C430;
-  --crema: #FAF6EC;
-  --crema-2: #F1EADA;
-  --tinta: #23241F;
-  --tinta-suave: #5C5C52;
+  /* paleta de marca CEKIM */
+  --slate: #4F5858;
+  --teal: #4F86A0;
+  --teal-mid: #6BA2B9;
+  --steel: #778692;
+  --sage: #9DAEAB;
+  --gold: #DBA510;
+
+  /* alias funcionales (mismo rol que antes, colores nuevos) */
+  --verde: var(--teal);
+  --verde-oscuro: #2C4C58;
+  --amarillo: var(--gold);
+  --crema: #F5F6F3;
+  --crema-2: #ECEEE9;
+  --tinta: #2B3234;
+  --tinta-suave: #5B6467;
   --blanco: #FFFFFF;
-  --borde: #DCD3BC;
+  --borde: #D8DCD6;
   --font-display: 'Fraunces', serif;
+  --font-script: 'Alex Brush', cursive;
   --font-body: 'Work Sans', sans-serif;
   --radius: 3px;
   --ease: cubic-bezier(.22,.61,.36,1);
@@ -70,8 +80,13 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:600; line-height:1.08; le
 }
 
 /* ---------- brand mark ---------- */
-.mark{ font-family:var(--font-display); font-weight:600; font-size:1.35rem; letter-spacing:.01em; color:var(--tinta); text-decoration:none; }
-.mark span{ color:var(--verde); }
+.mark{ display:inline-flex; align-items:flex-end; gap:.5rem; text-decoration:none; color:var(--tinta); line-height:1; }
+.mark-icon{ width:34px; height:34px; flex-shrink:0; }
+.mark-word{ display:flex; flex-direction:column; }
+.mark-script{ font-family:var(--font-script); font-size:2rem; line-height:.7; color:var(--tinta); margin-bottom:.3rem; }
+.mark-tagline{ font-family:var(--font-body); font-size:.56rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--steel); }
+footer .mark-script{ color:var(--crema); }
+footer .mark-tagline{ color:var(--sage); }
 
 /* ---------- buttons ---------- */
 .btn{
@@ -91,15 +106,15 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:600; line-height:1.08; le
 }
 .btn svg{ width:19px; height:19px; flex-shrink:0; }
 .btn-primary{ background:var(--verde); color:var(--crema); }
-.btn-primary:hover{ background:var(--verde-oscuro); transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(30,74,54,.45); }
+.btn-primary:hover{ background:var(--verde-oscuro); transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(44,76,88,.45); }
 .btn-accent{ background:var(--amarillo); color:var(--verde-oscuro); }
-.btn-accent:hover{ transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(244,196,48,.55); }
+.btn-accent:hover{ transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(219,165,16,.55); }
 .btn:focus-visible{ outline:2.5px solid var(--verde); outline-offset:3px; }
 
 /* ================= HEADER ================= */
 header{
   position:sticky; top:0; z-index:100;
-  background:rgba(250,246,236,.88);
+  background:rgba(245,246,243,.88);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--borde);
 }
@@ -150,20 +165,19 @@ header{
 .hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:1.1rem; }
 .hero-hint{ font-size:.86rem; color:var(--tinta-suave); }
 
+.hero-swoosh{ width:64px; height:64px; margin-bottom:1.3rem; }
 .hero-media{ position:relative; }
 .hero-media-frame{
   position:relative; border-radius:var(--radius); overflow:hidden;
   aspect-ratio:4/5;
 }
 .hero-media-frame img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; }
-.hero-media-tag{
-  position:absolute; left:-1.1rem; bottom:1.6rem;
-  background:var(--amarillo); color:var(--verde-oscuro);
-  padding:1rem 1.3rem; max-width:13.5rem;
-  font-family:var(--font-display); font-weight:600; font-size:1.02rem; line-height:1.28;
-  box-shadow:0 18px 34px -14px rgba(30,74,54,.4);
+.hero-caption{
+  display:flex; align-items:flex-start; gap:.8rem;
+  border-left:3px solid var(--teal); padding:.15rem 0 .15rem 1rem;
+  margin-top:1.3rem; max-width:24rem;
 }
-@media (max-width:480px){ .hero-media-tag{ left:auto; right:.9rem; bottom:-1rem; max-width:11rem; font-size:.92rem; padding:.85rem 1.05rem; } }
+.hero-caption p{ font-family:var(--font-display); font-style:italic; font-weight:500; font-size:1.02rem; line-height:1.35; color:var(--tinta); }
 
 /* ================= DIFERENCIALES ================= */
 .diff{ padding:5rem 0 4.5rem; }
@@ -172,15 +186,20 @@ header{
 .diff-head h2{ font-size:clamp(1.7rem,3.6vw,2.5rem); }
 
 .diff-list{ display:flex; flex-direction:column; }
-.diff-item{
-  display:grid; grid-template-columns:1fr; gap:1rem;
-  padding:2.1rem 0; border-top:1px solid var(--borde);
-}
-.diff-item:last-child{ border-bottom:1px solid var(--borde); }
+.diff-item{ position:relative; display:grid; grid-template-columns:1fr; gap:1rem; padding:1.9rem 0; }
 @media (min-width:760px){
   .diff-item{ grid-template-columns:5.5rem 1fr 1.7fr; align-items:start; gap:2rem; }
+  .diff-item::before{ content:""; position:absolute; left:2.65rem; top:0; bottom:0; width:2px; background:var(--borde); }
+  .diff-item:first-child::before{ top:3.3rem; }
+  .diff-item:last-child::before{ bottom:3.3rem; }
 }
-.diff-num{ font-family:var(--font-display); font-size:1.6rem; color:var(--amarillo); -webkit-text-stroke:1.4px var(--verde-oscuro); font-weight:600; }
+.diff-num{
+  position:relative; z-index:1;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:2.5rem; height:2.5rem; border-radius:50%;
+  background:var(--crema); border:2px solid var(--teal);
+  font-family:var(--font-display); font-weight:600; font-size:1.02rem; color:var(--teal);
+}
 .diff-item h3{ font-size:1.25rem; font-weight:600; color:var(--verde-oscuro); }
 .diff-item p{ color:var(--tinta-suave); max-width:36rem; }
 
@@ -246,25 +265,23 @@ header{
 footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 .footer-top{
   display:flex; flex-direction:column; gap:2.4rem;
-  padding-bottom:2.6rem; border-bottom:1px solid rgba(250,246,236,.14);
+  padding-bottom:2.6rem; border-bottom:1px solid rgba(245,246,243,.14);
 }
 @media (min-width:760px){ .footer-top{ flex-direction:row; justify-content:space-between; align-items:flex-start; } }
-.footer-brand .mark{ color:var(--crema); }
-.footer-brand .mark span{ color:var(--amarillo); }
-.footer-tagline{ color:rgba(250,246,236,.6); margin-top:.6rem; max-width:20rem; font-size:.95rem; }
+.footer-tagline{ color:rgba(245,246,243,.6); margin-top:.9rem; max-width:20rem; font-size:.95rem; }
 .footer-cols{ display:flex; gap:3.2rem; flex-wrap:wrap; }
 .footer-col h4{ font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:var(--amarillo); margin-bottom:.9rem; }
-.footer-col a, .footer-col p{ display:block; color:rgba(250,246,236,.82); text-decoration:none; font-size:.95rem; margin-bottom:.55rem; }
+.footer-col a, .footer-col p{ display:block; color:rgba(245,246,243,.82); text-decoration:none; font-size:.95rem; margin-bottom:.55rem; }
 .footer-col a:hover{ color:var(--amarillo); }
 .footer-bottom{
   display:flex; flex-direction:column; gap:1rem; padding-top:1.8rem;
-  font-size:.85rem; color:rgba(250,246,236,.55);
+  font-size:.85rem; color:rgba(245,246,243,.55);
 }
 @media (min-width:760px){ .footer-bottom{ flex-direction:row; justify-content:space-between; align-items:center; } }
 .footer-credit{ display:flex; align-items:center; gap:.4rem; }
-.footer-link{ color:rgba(250,246,236,.85); text-decoration:underline; text-decoration-color:rgba(250,246,236,.3); text-underline-offset:3px; }
+.footer-link{ color:rgba(245,246,243,.85); text-decoration:underline; text-decoration-color:rgba(245,246,243,.3); text-underline-offset:3px; }
 .footer-link:hover{ color:var(--amarillo); text-decoration-color:var(--amarillo); }
-.footer-credit-icon{ display:inline-flex; color:rgba(250,246,236,.7); }
+.footer-credit-icon{ display:inline-flex; color:rgba(245,246,243,.7); }
 .footer-credit-icon svg{ width:14px; height:14px; }
 .footer-credit-icon:hover{ color:var(--amarillo); }
 
@@ -274,10 +291,10 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
   display:flex; align-items:center; gap:.6rem;
   background:var(--verde); color:var(--crema);
   padding:.85rem 1.05rem; border-radius:999px;
-  text-decoration:none; box-shadow:0 12px 30px -10px rgba(30,74,54,.55);
+  text-decoration:none; box-shadow:0 12px 30px -10px rgba(44,76,88,.55);
   transition:transform .25s var(--ease), box-shadow .25s var(--ease);
 }
-.wa-float:hover{ transform:translateY(-3px) scale(1.02); box-shadow:0 16px 34px -8px rgba(30,74,54,.6); }
+.wa-float:hover{ transform:translateY(-3px) scale(1.02); box-shadow:0 16px 34px -8px rgba(44,76,88,.6); }
 .wa-float svg{ width:22px; height:22px; flex-shrink:0; }
 .wa-float span{ font-weight:600; font-size:.88rem; white-space:nowrap; }
 .wa-float:focus-visible{ outline:2.5px solid var(--amarillo); outline-offset:3px; }
@@ -291,7 +308,14 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 <!-- ============ HEADER ============ -->
 <header>
   <div class="container nav">
-    <a href="#main" class="mark">CEK<span>I</span>M</a>
+    <a href="#main" class="mark">
+      <svg class="mark-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M9 53C9 35 23 15 33 23" stroke="#778692" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
+        <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
+      </svg>
+      <span class="mark-word"><span class="mark-script">Cekim</span><span class="mark-tagline">Salud &amp; Movimiento</span></span>
+    </a>
     <ul class="nav-links">
       <li><a href="#diferencia">Nuestra mirada</a></li>
       <li><a href="#acompanamos">A quién acompañamos</a></li>
@@ -324,6 +348,11 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy reveal">
+      <svg class="hero-swoosh" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M9 53C9 35 23 15 33 23" stroke="#778692" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
+        <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
+      </svg>
       <p class="eyebrow">Centro de Salud y Movimiento · Turdera</p>
       <h1>Tu cuerpo no funciona por partes. Funciona como <em>un sistema.</em></h1>
       <p class="lede">En CEKIM acompañamos ese sistema completo: prevención, rehabilitación, movimiento, salud mental y nutrición, con un equipo que trabaja coordinado. No hace falta estar lesionado para empezar — ni tener experiencia previa.</p>
@@ -339,7 +368,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
       <div class="hero-media-frame">
         <img src="assets/studio-group.jpg" alt="Grupo de personas trabajando movimiento terapéutico en sillas dentro del espacio CEKIM" loading="eager">
       </div>
-      <div class="hero-media-tag">Movimiento con criterio, en grupo o en tu propio proceso.</div>
+      <div class="hero-caption"><p>Movimiento con criterio, en grupo o en tu propio proceso.</p></div>
     </div>
   </div>
 </section>
@@ -447,7 +476,14 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#main" class="mark">CEK<span>I</span>M</a>
+        <a href="#main" class="mark">
+      <svg class="mark-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M9 53C9 35 23 15 33 23" stroke="#778692" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
+        <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
+      </svg>
+      <span class="mark-word"><span class="mark-script">Cekim</span><span class="mark-tagline">Salud &amp; Movimiento</span></span>
+    </a>
         <p class="footer-tagline">Salud integral. Movimiento con criterio. Cada cuerpo es único.</p>
       </div>
       <div class="footer-cols">
