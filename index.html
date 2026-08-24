@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Alex+Brush&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Alex+Brush&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root{
   /* paleta de marca CEKIM */
@@ -29,7 +29,7 @@
   --tinta-suave: #5B6467;
   --blanco: #FFFFFF;
   --borde: #D8DCD6;
-  --font-display: 'Fraunces', serif;
+  --font-display: 'Manrope', sans-serif;
   --font-script: 'Alex Brush', cursive;
   --font-body: 'Work Sans', sans-serif;
   --radius: 3px;
@@ -51,7 +51,7 @@ a{ color:inherit; }
 .container{ max-width:1160px; margin:0 auto; padding:0 1.5rem; }
 
 /* ---------- type ---------- */
-h1,h2,h3{ font-family:var(--font-display); font-weight:600; line-height:1.08; letter-spacing:-.01em; }
+h1,h2,h3{ font-family:var(--font-display); font-weight:800; line-height:1.1; letter-spacing:-.02em; }
 .eyebrow{
   font-family:var(--font-body);
   font-size:.78rem;
@@ -160,7 +160,7 @@ header{
   margin-bottom:1.3rem;
   max-width:16ch;
 }
-.hero h1 em{ font-style:italic; color:var(--verde); font-weight:500; }
+.hero h1 em{ font-style:normal; font-family:var(--font-script); color:var(--verde); font-weight:400; font-size:1.5em; display:inline-block; line-height:.7; vertical-align:-.08em; }
 .hero .lede{ margin-bottom:2rem; }
 .hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:1.1rem; }
 .hero-hint{ font-size:.86rem; color:var(--tinta-suave); }
@@ -177,7 +177,7 @@ header{
   border-left:3px solid var(--teal); padding:.15rem 0 .15rem 1rem;
   margin-top:1.3rem; max-width:24rem;
 }
-.hero-caption p{ font-family:var(--font-display); font-style:italic; font-weight:500; font-size:1.02rem; line-height:1.35; color:var(--tinta); }
+.hero-caption p{ font-family:var(--font-script); font-weight:400; font-size:1.55rem; line-height:1.15; color:var(--tinta); }
 
 /* ================= DIFERENCIALES ================= */
 .diff{ padding:5rem 0 4.5rem; }
@@ -231,8 +231,8 @@ header{
 .team-copy h2{ font-size:clamp(1.7rem,3.6vw,2.4rem); margin-bottom:1.2rem; max-width:20ch; }
 .team-copy p{ color:var(--tinta-suave); font-size:1.06rem; margin-bottom:1.1rem; max-width:34rem; }
 .team-quote{
-  font-family:var(--font-display); font-style:italic; color:var(--verde); font-size:1.15rem;
-  border-top:1px solid var(--borde); padding-top:1.1rem; margin-top:1.4rem; max-width:30rem;
+  font-family:var(--font-script); font-weight:400; color:var(--verde); font-size:1.7rem; line-height:1.15;
+  border-top:1px solid var(--borde); padding-top:1.3rem; margin-top:1.4rem; max-width:30rem;
 }
 
 /* ================= COMMUNITY ================= */
@@ -310,7 +310,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
   <div class="container nav">
     <a href="#main" class="mark">
       <svg class="mark-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M9 53C9 35 23 15 33 23" stroke="#778692" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M9 53C9 35 23 15 33 23" stroke="#9DAEAB" stroke-width="3.2" stroke-linecap="round"/>
         <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
         <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
       </svg>
@@ -349,7 +349,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
   <div class="container hero-grid">
     <div class="hero-copy reveal">
       <svg class="hero-swoosh" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M9 53C9 35 23 15 33 23" stroke="#778692" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M9 53C9 35 23 15 33 23" stroke="#9DAEAB" stroke-width="3.2" stroke-linecap="round"/>
         <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
         <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
       </svg>
@@ -478,7 +478,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
       <div class="footer-brand">
         <a href="#main" class="mark">
       <svg class="mark-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M9 53C9 35 23 15 33 23" stroke="#778692" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M9 53C9 35 23 15 33 23" stroke="#9DAEAB" stroke-width="3.2" stroke-linecap="round"/>
         <path d="M47 16.5A15.5 15.5 0 1 0 47 47.5" stroke="#4F86A0" stroke-width="3.6" stroke-linecap="round"/>
         <circle cx="33.5" cy="20.5" r="4.6" fill="#DBA510"/>
       </svg>
