@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
 
 :root{
   /* paleta de marca CEKIM */
@@ -30,7 +30,7 @@
   --blanco: #FFFFFF;
   --borde: #D8DCD6;
   --font-display: 'Montserrat', sans-serif;
-  --font-script: 'Caveat', cursive;
+  --font-script: 'Montserrat', sans-serif;
   --font-body: 'Montserrat', sans-serif;
   --radius: 10px;
   --ease: cubic-bezier(.22,.61,.36,1);
@@ -174,14 +174,14 @@ header{
   text-shadow:0 2px 14px rgba(0,0,0,.5), 0 1px 3px rgba(0,0,0,.5);
 }
 @media (min-width:900px){ .hero h1{ margin-left:auto; } }
-.hero h1 em{ font-style:normal; font-family:var(--font-script); color:var(--teal-mid); font-weight:700; font-size:1.3em; display:inline-block; line-height:.75; vertical-align:-.06em; }
+.hero h1 em{ font-style:italic; font-family:var(--font-script); color:var(--teal-mid); font-weight:500; font-size:1.05em; display:inline; }
 .hero .lede{ margin-bottom:1rem; max-width:38ch; font-size:.88rem; color:rgba(245,246,243,.94); text-shadow:0 1px 10px rgba(0,0,0,.5); }
 @media (min-width:900px){ .hero .lede{ margin-left:auto; } }
 .hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:.9rem; }
 @media (min-width:900px){ .hero-actions{ justify-content:flex-end; } }
 .hero-actions .btn{ padding:.75rem 1.35rem; font-size:.86rem; }
 .hero-actions .btn svg{ width:16px; height:16px; }
-.hero-caption{ font-family:var(--font-script); font-weight:700; font-size:1.1rem; line-height:1.2; color:var(--gold); margin-top:.8rem; text-shadow:0 2px 10px rgba(0,0,0,.4); }
+.hero-caption{ font-family:var(--font-script); font-style:italic; font-weight:500; font-size:1rem; line-height:1.2; color:var(--gold); margin-top:.8rem; text-shadow:0 2px 10px rgba(0,0,0,.4); }
 
 
 /* ================= DIFERENCIALES ================= */
@@ -214,15 +214,19 @@ header{
 }
 
 /* ================= AUDIENCE (dark band) ================= */
+.audience-wrap{ padding:0 0 5.5rem; }
 .audience{
   background:var(--verde-oscuro); color:var(--crema);
-  padding:5rem 0; position:relative; overflow:hidden;
+  padding:4rem 1.5rem; position:relative; overflow:hidden;
+  border-radius:28px;
 }
+@media (max-width:600px){ .audience{ border-radius:20px; padding:3rem 1.2rem; } }
 .audience-watermark{
   position:absolute; top:-4rem; right:-3rem; width:22rem; height:auto;
   opacity:.07; pointer-events:none; z-index:0;
 }
-.audience .container{ position:relative; z-index:1; text-align:center; }
+.audience > *{ position:relative; z-index:1; }
+.audience{ text-align:center; }
 .audience-head{ max-width:34rem; margin:0 auto 2.8rem; }
 .audience-head h2{ color:var(--crema); font-size:clamp(1.85rem,3.9vw,2.7rem); }
 .audience-list{ display:grid; grid-template-columns:1fr; gap:0; max-width:46rem; margin:0 auto; text-align:left; }
@@ -230,8 +234,8 @@ header{
 .audience-item{ margin-bottom:2.2rem; }
 .audience-item p{ font-family:var(--font-display); font-size:1.18rem; font-weight:500; line-height:1.4; }
 .audience-item p::before{
-  content:"“"; font-family:var(--font-script); font-size:2.2rem; font-weight:700;
-  color:var(--gold); line-height:0; display:inline-block; vertical-align:-.5rem; margin-right:.15rem;
+  content:"“"; font-family:var(--font-script); font-size:2rem; font-weight:800;
+  color:var(--gold); line-height:0; display:inline-block; vertical-align:-.4rem; margin-right:.15rem;
 }
 .audience-close{
   margin-top:1rem; font-size:1.05rem; color:var(--amarillo); font-weight:600; max-width:34rem;
@@ -246,7 +250,7 @@ header{
 .team-copy h2{ font-size:clamp(1.7rem,3.6vw,2.4rem); margin-bottom:1.2rem; max-width:20ch; }
 .team-copy p{ color:var(--tinta-suave); font-size:1.06rem; margin-bottom:1.1rem; max-width:34rem; }
 .team-quote{
-  font-family:var(--font-script); font-weight:700; color:var(--verde); font-size:1.8rem; line-height:1.2;
+  font-family:var(--font-script); font-style:italic; font-weight:500; color:var(--verde); font-size:1.3rem; line-height:1.35;
   border-top:1px solid var(--borde); padding-top:1.3rem; margin-top:1.4rem; max-width:30rem;
 }
 
@@ -444,19 +448,21 @@ a[href*="wa.me"]:active{
 </section>
 
 <!-- ============ A QUIÉN ACOMPAÑAMOS ============ -->
-<section class="audience" id="acompanamos">
-  <img src="assets/cekim-mark.png" alt="" class="audience-watermark" aria-hidden="true">
+<section class="audience-wrap" id="acompanamos">
   <div class="container">
-    <div class="audience-head reveal">
-      <h2>¿Te reconocés en alguna de estas historias? Hay un lugar para vos, sea cual sea tu punto de partida.</h2>
+    <div class="audience">
+      <img src="assets/cekim-mark.png" alt="" class="audience-watermark" aria-hidden="true">
+      <div class="audience-head reveal">
+        <h2>¿Te reconocés en alguna de estas historias? Hay un lugar para vos, sea cual sea tu punto de partida.</h2>
+      </div>
+      <div class="audience-list reveal-stagger">
+        <div class="audience-item"><p>Hace años convivís con el mismo dolor y ya probaste de todo.</p></div>
+        <div class="audience-item"><p>Querés empezar a moverte, pero no sabés por dónde ni con quién.</p></div>
+        <div class="audience-item"><p>Volvés de una lesión y no sabés si estás forzando de más o de menos.</p></div>
+        <div class="audience-item"><p>Buscás un espacio que entienda tu etapa de vida, no una rutina genérica.</p></div>
+      </div>
+      <p class="audience-close reveal">No hace falta tener un diagnóstico. Hace falta tener ganas de empezar.</p>
     </div>
-    <div class="audience-list reveal-stagger">
-      <div class="audience-item"><p>Hace años convivís con el mismo dolor y ya probaste de todo.</p></div>
-      <div class="audience-item"><p>Querés empezar a moverte, pero no sabés por dónde ni con quién.</p></div>
-      <div class="audience-item"><p>Volvés de una lesión y no sabés si estás forzando de más o de menos.</p></div>
-      <div class="audience-item"><p>Buscás un espacio que entienda tu etapa de vida, no una rutina genérica.</p></div>
-    </div>
-    <p class="audience-close reveal">No hace falta tener un diagnóstico. Hace falta tener ganas de empezar.</p>
   </div>
 </section>
 
