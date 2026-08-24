@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEKIM — Centro de Salud y Movimiento en Turdera</title>
+<title>CEKIM · Centro de Salud y Movimiento en Turdera</title>
 <meta name="description" content="CEKIM es un centro de salud y movimiento en Turdera, Buenos Aires. Un equipo interdisciplinario que acompaña tu cuerpo como un sistema completo: prevención, rehabilitación, movimiento, salud mental y nutrición.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,63 +146,75 @@ header{
 /* ================= HERO ================= */
 .hero{ padding:2rem 0 4.5rem; }
 .hero-frame{
-  background:var(--crema-2);
-  border:1px solid var(--borde);
   border-radius:22px;
-  padding:1.5rem;
-  box-shadow:0 22px 40px -32px rgba(20,26,28,.22);
+  overflow:hidden;
+  box-shadow:0 30px 55px -28px rgba(20,26,28,.38);
 }
-@media (max-width:600px){ .hero-frame{ padding:1rem; border-radius:18px; } }
 .hero-banner{
-  position:relative; border-radius:16px; overflow:hidden;
-  min-height:340px; display:flex; align-items:flex-end;
+  position:relative;
+  min-height:440px; display:flex; align-items:flex-start;
 }
-@media (min-width:900px){ .hero-banner{ min-height:440px; } }
+@media (min-width:900px){ .hero-banner{ min-height:560px; align-items:center; } }
 .hero-banner-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%; }
 .hero-banner-overlay{
   position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(15,20,22,.32) 0%, rgba(15,20,22,.28) 45%, rgba(15,20,22,.68) 100%);
+  background:linear-gradient(180deg, rgba(15,20,22,.62) 0%, rgba(15,20,22,.2) 55%, rgba(15,20,22,.1) 100%);
 }
-.hero-copy{ position:relative; z-index:1; padding:1.3rem 1.2rem; max-width:28rem; }
-@media (min-width:900px){ .hero-copy{ padding:1.8rem 2.2rem 2rem; } }
-.hero-swoosh{ height:30px; width:auto; margin-bottom:.6rem; filter:drop-shadow(0 2px 8px rgba(0,0,0,.45)); }
+@media (min-width:900px){
+  .hero-banner-overlay{
+    background:linear-gradient(100deg, rgba(15,20,22,.08) 0%, rgba(15,20,22,.18) 42%, rgba(15,20,22,.66) 68%, rgba(15,20,22,.72) 100%);
+  }
+}
+.hero-copy{ position:relative; z-index:1; padding:1.6rem 1.4rem; max-width:26rem; }
+@media (min-width:900px){ .hero-copy{ padding:2.4rem 3rem; max-width:24rem; margin-left:auto; text-align:right; } }
+.hero-swoosh{ height:32px; width:auto; margin-bottom:.7rem; filter:drop-shadow(0 2px 8px rgba(0,0,0,.45)); }
+@media (min-width:900px){ .hero-swoosh{ margin-left:auto; } }
 .hero h1{
-  font-size:clamp(1.25rem, 2.5vw, 1.7rem);
-  margin-bottom:.55rem;
-  max-width:20ch;
+  font-size:clamp(1.4rem, 2.7vw, 1.85rem);
+  margin-bottom:.6rem;
+  max-width:22ch;
   color:var(--crema);
   text-shadow:0 2px 14px rgba(0,0,0,.5), 0 1px 3px rgba(0,0,0,.5);
 }
+@media (min-width:900px){ .hero h1{ margin-left:auto; } }
 .hero h1 em{ font-style:normal; font-family:var(--font-script); color:var(--teal-mid); font-weight:700; font-size:1.3em; display:inline-block; line-height:.75; vertical-align:-.06em; }
-.hero .lede{ margin-bottom:.9rem; max-width:42ch; font-size:.82rem; color:rgba(245,246,243,.94); text-shadow:0 1px 10px rgba(0,0,0,.5); }
+.hero .lede{ margin-bottom:1rem; max-width:38ch; font-size:.88rem; color:rgba(245,246,243,.94); text-shadow:0 1px 10px rgba(0,0,0,.5); }
+@media (min-width:900px){ .hero .lede{ margin-left:auto; } }
 .hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:.9rem; }
+@media (min-width:900px){ .hero-actions{ justify-content:flex-end; } }
 .hero-actions .btn{ padding:.75rem 1.35rem; font-size:.86rem; }
 .hero-actions .btn svg{ width:16px; height:16px; }
-.hero-caption{ font-family:var(--font-script); font-weight:700; font-size:1.05rem; line-height:1.2; color:var(--gold); margin-top:.7rem; text-shadow:0 2px 10px rgba(0,0,0,.4); }
+.hero-caption{ font-family:var(--font-script); font-weight:700; font-size:1.1rem; line-height:1.2; color:var(--gold); margin-top:.8rem; text-shadow:0 2px 10px rgba(0,0,0,.4); }
 
 
 /* ================= DIFERENCIALES ================= */
 .diff{ padding:5rem 0 4.5rem; }
-.diff-head{ max-width:34rem; margin-bottom:3.2rem; }
+.diff-head{ max-width:38rem; margin:0 auto 3.2rem; text-align:center; }
 .diff-head h2{ font-size:clamp(1.7rem,3.6vw,2.5rem); }
 
-.diff-list{ display:flex; flex-direction:column; }
-.diff-item{ position:relative; display:grid; grid-template-columns:1fr; gap:1rem; padding:1.9rem 0; }
-@media (min-width:760px){
-  .diff-item{ grid-template-columns:5.5rem 1fr 1.7fr; align-items:start; gap:2rem; }
-  .diff-item::before{ content:""; position:absolute; left:2.1rem; top:0; bottom:0; width:2px; background:var(--borde); }
-  .diff-item:first-child::before{ top:2.85rem; }
-  .diff-item:last-child::before{ bottom:2.85rem; }
+.diff-marquee{
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
 }
-.diff-num{
-  position:relative; z-index:1;
-  display:inline-flex; align-items:center; justify-content:center;
-  width:1.1rem; height:1.1rem; margin-top:.4rem; margin-left:1.55rem; border-radius:50%;
-  background:var(--gold);
-  box-shadow:0 0 0 5px var(--crema);
+.diff-track{
+  display:flex; gap:1.25rem; width:max-content;
+  animation:diff-scroll 34s linear infinite;
 }
-.diff-item h3{ font-size:1.25rem; font-weight:600; color:var(--verde-oscuro); }
-.diff-item p{ color:var(--tinta-suave); max-width:36rem; }
+.diff-track.is-paused, .diff-marquee:hover .diff-track{ animation-play-state:paused; }
+@keyframes diff-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.diff-card{
+  flex:0 0 17.5rem;
+  background:var(--crema-2); border:1px solid var(--borde); border-radius:var(--radius);
+  padding:1.7rem 1.6rem;
+}
+.diff-card h3{ font-size:1.18rem; font-weight:600; color:var(--verde-oscuro); margin-bottom:.5rem; }
+.diff-card p{ color:var(--tinta-suave); font-size:.95rem; }
+@media (max-width:600px){ .diff-card{ flex-basis:15.5rem; padding:1.4rem 1.3rem; } }
+@media (prefers-reduced-motion: reduce){
+  .diff-marquee{ overflow-x:auto; -webkit-mask-image:none; mask-image:none; }
+  .diff-track{ animation:none; }
+}
 
 /* ================= AUDIENCE (dark band) ================= */
 .audience{
@@ -213,10 +225,10 @@ header{
   position:absolute; top:-4rem; right:-3rem; width:22rem; height:auto;
   opacity:.07; pointer-events:none; z-index:0;
 }
-.audience .container{ position:relative; z-index:1; }
-.audience-head{ max-width:34rem; margin-bottom:2.8rem; }
+.audience .container{ position:relative; z-index:1; text-align:center; }
+.audience-head{ max-width:34rem; margin:0 auto 2.8rem; }
 .audience-head h2{ color:var(--crema); font-size:clamp(1.85rem,3.9vw,2.7rem); }
-.audience-list{ display:grid; grid-template-columns:1fr; gap:0; max-width:46rem; }
+.audience-list{ display:grid; grid-template-columns:1fr; gap:0; max-width:46rem; margin:0 auto; text-align:left; }
 @media (min-width:720px){ .audience-list{ grid-template-columns:1fr 1fr; gap:0 3rem; } }
 .audience-item{ margin-bottom:2.2rem; }
 .audience-item p{ font-family:var(--font-display); font-size:1.18rem; font-weight:500; line-height:1.4; }
@@ -252,8 +264,20 @@ header{
   border:1.5px solid var(--verde); color:var(--verde-oscuro); font-weight:600; font-size:.85rem;
   padding:.45rem .95rem; border-radius:999px;
 }
+.community-tags-more{
+  border-style:dashed !important; color:var(--tinta-suave) !important; border-color:var(--sage) !important;
+  font-weight:500 !important;
+}
 .community-media{ border-radius:var(--radius); overflow:hidden; aspect-ratio:4/5; border:1px solid var(--borde); }
 .community-media img{ width:100%; height:100%; object-fit:cover; object-position:center 25%; }
+
+/* ================= SERVICIOS (zócalo) ================= */
+.services-band{
+  padding:4rem 0; text-align:center;
+  border-top:1px solid var(--borde); border-bottom:1px solid var(--borde);
+}
+.services-band h2{ font-size:clamp(1.5rem,3vw,2rem); margin-bottom:.8rem; }
+.services-band p{ color:var(--tinta-suave); max-width:36rem; margin:0 auto 1.6rem; }
 
 /* ================= CTA FINAL ================= */
 .cta-final{
@@ -307,6 +331,15 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 .wa-float span{ font-weight:600; font-size:.88rem; white-space:nowrap; }
 .wa-float:focus-visible{ outline:2.5px solid var(--amarillo); outline-offset:3px; }
 @media (max-width:480px){ .wa-float span{ display:none; } .wa-float{ padding:.9rem; } }
+
+/* Botones de WhatsApp: hover/tap pasan a verde WhatsApp */
+a[href*="wa.me"]:hover,
+a[href*="wa.me"]:focus-visible,
+a[href*="wa.me"]:active{
+  background:#25D366 !important;
+  border-color:#25D366 !important;
+  color:#ffffff !important;
+}
 </style>
 </head>
 <body>
@@ -317,7 +350,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
 <header>
   <div class="container nav">
     <a href="#main" class="mark">
-      <img src="assets/cekim-logo.png" alt="CEKIM — Salud &amp; Movimiento" class="logo-full">
+      <img src="assets/cekim-logo.png" alt="CEKIM · Salud &amp; Movimiento" class="logo-full">
     </a>
     <ul class="nav-links">
       <li><a href="#diferencia">Nuestra mirada</a></li>
@@ -377,26 +410,40 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
     <div class="diff-head reveal">
       <h2>No tratamos síntomas aislados. Acompañamos procesos.</h2>
     </div>
-    <div class="diff-list reveal-stagger">
-      <div class="diff-item">
-        <span class="diff-num" aria-hidden="true"></span>
-        <h3>Mirada integral</h3>
-        <p>Tu dolor no vive solo en la zona donde lo sentís. Miramos cómo te movés, descansás, respirás y te alimentás antes de decidir por dónde empezar.</p>
-      </div>
-      <div class="diff-item">
-        <span class="diff-num" aria-hidden="true"></span>
-        <h3>Equipo coordinado</h3>
-        <p>Kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental, trabajando en el mismo espacio y siguiendo el mismo proceso.</p>
-      </div>
-      <div class="diff-item">
-        <span class="diff-num" aria-hidden="true"></span>
-        <h3>Sin promesas vacías</h3>
-        <p>No prometemos resultados garantizados ni rutinas genéricas. Trabajamos con lo que tu cuerpo puede dar hoy, y construimos desde ahí.</p>
-      </div>
-      <div class="diff-item">
-        <span class="diff-num" aria-hidden="true"></span>
-        <h3>Un espacio, no una cinta de correr</h3>
-        <p>No se trata de exigir más, sino de moverte mejor. Pequeños estímulos, bien pensados, pueden generar grandes cambios.</p>
+    <div class="diff-marquee">
+      <div class="diff-track" id="diffTrack">
+        <div class="diff-card">
+          <h3>Mirada integral</h3>
+          <p>Tu dolor no vive solo en la zona donde lo sentís. Miramos cómo te movés, descansás, respirás y te alimentás antes de decidir por dónde empezar.</p>
+        </div>
+        <div class="diff-card">
+          <h3>Equipo coordinado</h3>
+          <p>Kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental, trabajando en el mismo espacio y siguiendo el mismo proceso.</p>
+        </div>
+        <div class="diff-card">
+          <h3>Sin promesas vacías</h3>
+          <p>No prometemos resultados garantizados ni rutinas genéricas. Trabajamos con lo que tu cuerpo puede dar hoy, y construimos desde ahí.</p>
+        </div>
+        <div class="diff-card">
+          <h3>Un espacio, no una cinta de correr</h3>
+          <p>No se trata de exigir más, sino de moverte mejor. Pequeños estímulos, bien pensados, pueden generar grandes cambios.</p>
+        </div>
+        <div class="diff-card" aria-hidden="true">
+          <h3>Mirada integral</h3>
+          <p>Tu dolor no vive solo en la zona donde lo sentís. Miramos cómo te movés, descansás, respirás y te alimentás antes de decidir por dónde empezar.</p>
+        </div>
+        <div class="diff-card" aria-hidden="true">
+          <h3>Equipo coordinado</h3>
+          <p>Kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental, trabajando en el mismo espacio y siguiendo el mismo proceso.</p>
+        </div>
+        <div class="diff-card" aria-hidden="true">
+          <h3>Sin promesas vacías</h3>
+          <p>No prometemos resultados garantizados ni rutinas genéricas. Trabajamos con lo que tu cuerpo puede dar hoy, y construimos desde ahí.</p>
+        </div>
+        <div class="diff-card" aria-hidden="true">
+          <h3>Un espacio, no una cinta de correr</h3>
+          <p>No se trata de exigir más, sino de moverte mejor. Pequeños estímulos, bien pensados, pueden generar grandes cambios.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -412,7 +459,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
     <div class="audience-list reveal-stagger">
       <div class="audience-item"><p>Hace años convivís con el mismo dolor y ya probaste de todo.</p></div>
       <div class="audience-item"><p>Querés empezar a moverte, pero no sabés por dónde ni con quién.</p></div>
-      <div class="audience-item"><p>Volvés de una lesión y te da miedo forzar de más — o de menos.</p></div>
+      <div class="audience-item"><p>Volvés de una lesión y no sabés si estás forzando de más o de menos.</p></div>
       <div class="audience-item"><p>Buscás un espacio que entienda tu etapa de vida, no una rutina genérica.</p></div>
     </div>
     <p class="audience-close reveal">No hace falta tener un diagnóstico. Hace falta tener ganas de empezar.</p>
@@ -426,8 +473,8 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
       <img src="assets/studio-assist.jpg" alt="Profesional de CEKIM acompañando de forma personalizada a una persona durante un ejercicio" loading="lazy">
     </div>
     <div class="team-copy reveal">
-      <h2>Un equipo interdisciplinario, no un mostrador de turnos.</h2>
-      <p>En CEKIM, kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental se sientan en la misma mesa. Tu proceso no se corta entre un profesional y otro: se construye entre todos, con vos en el centro.</p>
+      <h2>Un equipo que trabaja en conjunto, pensando en vos.</h2>
+      <p>En CEKIM, kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental se sientan en la misma mesa, entre otras disciplinas que sumamos según lo que necesites. Tu proceso no se corta entre un profesional y otro: se construye entre todos, con vos en el centro.</p>
       <p class="team-quote">Cada cuerpo es único. Por eso, cada plan también lo es.</p>
     </div>
   </div>
@@ -443,11 +490,24 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
         <span>Grupos reducidos</span>
         <span>Talleres</span>
         <span>Experiencias compartidas</span>
+        <span class="community-tags-more">Y más</span>
       </div>
     </div>
     <div class="community-media reveal">
-      <img src="assets/studio-group.jpg" alt="Clase grupal en el espacio de CEKIM con luz natural y vista al jardín" loading="lazy">
+      <img src="assets/studio-assist.jpg" alt="Profesional de CEKIM acompañando a una persona dentro del espacio" loading="lazy" style="object-position:center 55%;">
     </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS (zócalo) ============ -->
+<section class="services-band">
+  <div class="container reveal">
+    <h2>Conocé los servicios de CEKIM</h2>
+    <p>Kinesiología, movimiento terapéutico, nutrición, salud mental y más, según lo que tu proceso necesite. Escribinos y te contamos qué opción se ajusta mejor a tu momento.</p>
+    <a class="btn btn-primary" href="https://wa.me/5491154572979?text=Hola!%20Quiero%20conocer%20los%20servicios%20de%20CEKIM." target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.28.62 4.4 1.7 6.23L4 29l7.97-1.66A11.9 11.9 0 0 0 16.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3Zm6.98 16.9c-.3.83-1.56 1.55-2.16 1.63-.55.08-1.24.11-2-.13-.46-.15-1.05-.34-1.8-.67-3.17-1.37-5.24-4.55-5.4-4.76-.16-.21-1.29-1.71-1.29-3.26s.82-2.32 1.11-2.64c.3-.32.64-.4.86-.4.21 0 .43 0 .62.01.2.01.47-.08.73.56.3.72 1 2.48 1.08 2.66.08.18.13.4.02.63-.62 1.24-1.28 1.2-.9 1.86.85 1.48 1.53 2.17 2.7 2.87 1.5.9 1.66.75 1.98.4.55-.6.9-1.34 1.29-1.34.14 0 .2.01.28.03.2.06 1.8.85 2.11 1 .3.16.5.24.58.37.08.13.08.75-.21 1.58Z"/></svg>
+      Ver servicios por WhatsApp
+    </a>
   </div>
 </section>
 
@@ -456,7 +516,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
   <img src="assets/cekim-mark.png" alt="" class="cta-final-watermark" aria-hidden="true">
   <div class="container reveal">
     <h2>El primer paso no tiene que ser grande.</h2>
-    <p>Contanos cómo estás y en qué etapa te encontrás. Te ayudamos a ver por dónde empezar — sin presión y sin compromiso.</p>
+    <p>Contanos cómo estás y en qué etapa te encontrás. Te ayudamos a ver por dónde empezar, sin presión y sin compromiso.</p>
     <a class="btn btn-accent" href="https://wa.me/5491154572979?text=Hola!%20Quiero%20conocer%20m%C3%A1s%20sobre%20CEKIM." target="_blank" rel="noopener">
       <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.28.62 4.4 1.7 6.23L4 29l7.97-1.66A11.9 11.9 0 0 0 16.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3Zm6.98 16.9c-.3.83-1.56 1.55-2.16 1.63-.55.08-1.24.11-2-.13-.46-.15-1.05-.34-1.8-.67-3.17-1.37-5.24-4.55-5.4-4.76-.16-.21-1.29-1.71-1.29-3.26s.82-2.32 1.11-2.64c.3-.32.64-.4.86-.4.21 0 .43 0 .62.01.2.01.47-.08.73.56.3.72 1 2.48 1.08 2.66.08.18.13.4.02.63-.62 1.24-1.28 1.2-.9 1.86.85 1.48 1.53 2.17 2.7 2.87 1.5.9 1.66.75 1.98.4.55-.6.9-1.34 1.29-1.34.14 0 .2.01.28.03.2.06 1.8.85 2.11 1 .3.16.5.24.58.37.08.13.08.75-.21 1.58Z"/></svg>
       Hablemos por WhatsApp
@@ -496,7 +556,7 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> CEKIM — Centro de Salud y Movimiento</span>
+      <span>© <span id="year"></span> CEKIM · Centro de Salud y Movimiento</span>
       <p class="footer-credit">
         Hecho por
         <a href="https://reentrystyle.com.ar" target="_blank" rel="noopener" class="footer-link">Reentry Style</a>
@@ -530,6 +590,12 @@ footer{ background:var(--tinta); color:var(--crema); padding:3.6rem 0 2rem; }
       burgerBtn.setAttribute('aria-expanded', 'false');
     });
   });
+
+  var diffTrack = document.getElementById('diffTrack');
+  if(diffTrack){
+    diffTrack.addEventListener('touchstart', function(){ diffTrack.classList.add('is-paused'); }, { passive:true });
+    diffTrack.addEventListener('touchend', function(){ diffTrack.classList.remove('is-paused'); });
+  }
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var els = document.querySelectorAll('.reveal, .reveal-stagger');
