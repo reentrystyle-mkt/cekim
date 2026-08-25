@@ -123,8 +123,10 @@ header .nav-links a, header .nav-burger{ color:var(--tinta); border-color:var(--
 .nav-links a:hover::after{ transform:scaleX(1); }
 .nav-cta{ display:none; }
 @media (min-width:860px){
-  .nav-links{ display:flex; }
-  .nav-cta{ display:inline-flex; }
+  .nav{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; column-gap:1.5rem; }
+  .nav .mark{ grid-column:2; justify-self:center; }
+  .nav-links{ display:flex; grid-column:1; justify-self:start; }
+  .nav-cta{ display:inline-flex; grid-column:3; justify-self:end; }
 }
 .nav-burger{
   display:flex; align-items:center; justify-content:center;
@@ -393,7 +395,7 @@ a[href*="wa.me"]:active{
 <section class="hero">
     <div class="hero-frame reveal">
       <div class="hero-banner">
-        <img class="hero-banner-img" src="assets/studio-group.jpg" alt="Grupo de personas trabajando movimiento terapéutico en sillas dentro del espacio CEKIM" loading="eager">
+        <img class="hero-banner-img" src="assets/studio-group.jpg" alt="Personas trabajando movimiento terapéutico con pelotas dentro del espacio CEKIM" loading="eager">
         <div class="hero-banner-overlay"></div>
         <div class="hero-copy">
           <h1>Tu cuerpo no funciona por partes. Funciona como <em>un sistema.</em></h1>
@@ -494,7 +496,7 @@ a[href*="wa.me"]:active{
       </div>
     </div>
     <div class="community-media reveal">
-      <img src="assets/studio-assist.jpg" alt="Profesional de CEKIM acompañando a una persona dentro del espacio" loading="lazy" style="object-position:center 55%;">
+      <img src="assets/community-stretch.jpg" alt="Grupo de personas estirando juntas en una clase de CEKIM" loading="lazy" style="object-position:center 32%;">
     </div>
   </div>
 </section>
