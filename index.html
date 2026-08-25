@@ -189,34 +189,17 @@ header{
 .diff-head{ max-width:38rem; margin:0 auto 3.2rem; text-align:center; }
 .diff-head h2{ font-size:clamp(1.7rem,3.6vw,2.5rem); }
 
-.diff-marquee{
-  overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-  mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+.diff-grid{
+  display:grid; grid-template-columns:1fr; gap:1.25rem;
 }
-.diff-track{
-  display:flex; gap:1.25rem; width:max-content;
-  animation:diff-scroll 34s linear infinite;
-}
-.diff-track.is-paused, .diff-marquee:hover .diff-track{ animation-play-state:paused; }
-@keyframes diff-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@media (min-width:600px){ .diff-grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1000px){ .diff-grid{ grid-template-columns:repeat(4,1fr); } }
 .diff-card{
-  flex:0 0 17.5rem;
-  padding:.5rem .3rem;
+  background:var(--crema-2); border:1px solid var(--borde); border-radius:var(--radius);
+  padding:1.7rem 1.6rem;
 }
-.diff-card h3{
-  font-size:1.18rem; font-weight:600; color:var(--verde-oscuro); margin-bottom:.5rem;
-}
-.diff-card h3::before{
-  content:"“"; font-family:var(--font-script); font-size:1.7rem; font-weight:800;
-  color:var(--gold); line-height:0; display:inline-block; vertical-align:-.32rem; margin-right:.1rem;
-}
+.diff-card h3{ font-size:1.18rem; font-weight:600; color:var(--verde-oscuro); margin-bottom:.5rem; }
 .diff-card p{ color:var(--tinta-suave); font-size:.95rem; }
-@media (max-width:600px){ .diff-card{ flex-basis:15.5rem; padding:1.4rem 1.3rem; } }
-@media (prefers-reduced-motion: reduce){
-  .diff-marquee{ overflow-x:auto; -webkit-mask-image:none; mask-image:none; }
-  .diff-track{ animation:none; }
-}
 
 /* ================= AUDIENCE (dark band) ================= */
 .audience-wrap{ padding:0 0 5.5rem; }
@@ -234,16 +217,34 @@ header{
 .audience{ text-align:center; }
 .audience-head{ max-width:34rem; margin:0 auto 2.8rem; }
 .audience-head h2{ color:var(--crema); font-size:clamp(1.85rem,3.9vw,2.7rem); }
-.audience-list{ display:grid; grid-template-columns:1fr; gap:0; max-width:46rem; margin:0 auto; text-align:left; }
-@media (min-width:720px){ .audience-list{ grid-template-columns:1fr 1fr; gap:0 3rem; } }
+.audience-marquee{
+  overflow:hidden; text-align:left;
+  -webkit-mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+}
+.audience-track{
+  display:flex; gap:1.25rem; width:max-content;
+  animation:audience-scroll 30s linear infinite;
+}
+.audience-track.is-paused, .audience-marquee:hover .audience-track{ animation-play-state:paused; }
+@keyframes audience-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 .audience-item{
-  margin-bottom:1.5rem;
+  flex:0 0 19rem;
   background:rgba(245,246,243,.07); border:1px solid rgba(245,246,243,.16); border-radius:var(--radius);
   padding:1.4rem 1.5rem;
 }
+@media (max-width:600px){ .audience-item{ flex-basis:16rem; } }
 .audience-item p{ font-family:var(--font-display); font-size:1.1rem; font-weight:500; line-height:1.4; }
+.audience-item p::before{
+  content:"“"; font-family:var(--font-script); font-size:2rem; font-weight:800;
+  color:var(--gold); line-height:0; display:inline-block; vertical-align:-.4rem; margin-right:.15rem;
+}
 .audience-close{
-  margin-top:1rem; font-size:1.05rem; color:var(--amarillo); font-weight:600; max-width:34rem;
+  margin:1.5rem auto 0; font-size:1.05rem; color:var(--amarillo); font-weight:600; max-width:34rem; text-align:center;
+}
+@media (prefers-reduced-motion: reduce){
+  .audience-marquee{ overflow-x:auto; -webkit-mask-image:none; mask-image:none; }
+  .audience-track{ animation:none; }
 }
 
 /* ================= TEAM ================= */
@@ -413,40 +414,22 @@ a[href*="wa.me"]:active{
     <div class="diff-head reveal">
       <h2>No tratamos síntomas aislados. Acompañamos procesos.</h2>
     </div>
-    <div class="diff-marquee">
-      <div class="diff-track" id="diffTrack">
-        <div class="diff-card">
-          <h3>Mirada integral</h3>
-          <p>Tu dolor no vive solo en la zona donde lo sentís. Miramos cómo te movés, descansás, respirás y te alimentás antes de decidir por dónde empezar.</p>
-        </div>
-        <div class="diff-card">
-          <h3>Equipo coordinado</h3>
-          <p>Kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental, trabajando en el mismo espacio y siguiendo el mismo proceso.</p>
-        </div>
-        <div class="diff-card">
-          <h3>Sin promesas vacías</h3>
-          <p>No prometemos resultados garantizados ni rutinas genéricas. Trabajamos con lo que tu cuerpo puede dar hoy, y construimos desde ahí.</p>
-        </div>
-        <div class="diff-card">
-          <h3>Un espacio, no una cinta de correr</h3>
-          <p>No se trata de exigir más, sino de moverte mejor. Pequeños estímulos, bien pensados, pueden generar grandes cambios.</p>
-        </div>
-        <div class="diff-card" aria-hidden="true">
-          <h3>Mirada integral</h3>
-          <p>Tu dolor no vive solo en la zona donde lo sentís. Miramos cómo te movés, descansás, respirás y te alimentás antes de decidir por dónde empezar.</p>
-        </div>
-        <div class="diff-card" aria-hidden="true">
-          <h3>Equipo coordinado</h3>
-          <p>Kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental, trabajando en el mismo espacio y siguiendo el mismo proceso.</p>
-        </div>
-        <div class="diff-card" aria-hidden="true">
-          <h3>Sin promesas vacías</h3>
-          <p>No prometemos resultados garantizados ni rutinas genéricas. Trabajamos con lo que tu cuerpo puede dar hoy, y construimos desde ahí.</p>
-        </div>
-        <div class="diff-card" aria-hidden="true">
-          <h3>Un espacio, no una cinta de correr</h3>
-          <p>No se trata de exigir más, sino de moverte mejor. Pequeños estímulos, bien pensados, pueden generar grandes cambios.</p>
-        </div>
+    <div class="diff-grid reveal-stagger">
+      <div class="diff-card">
+        <h3>Mirada integral</h3>
+        <p>Tu dolor no vive solo en la zona donde lo sentís. Miramos cómo te movés, descansás, respirás y te alimentás antes de decidir por dónde empezar.</p>
+      </div>
+      <div class="diff-card">
+        <h3>Equipo coordinado</h3>
+        <p>Kinesiología, movimiento terapéutico, nutrición y acompañamiento en salud mental, trabajando en el mismo espacio y siguiendo el mismo proceso.</p>
+      </div>
+      <div class="diff-card">
+        <h3>Sin promesas vacías</h3>
+        <p>No prometemos resultados garantizados ni rutinas genéricas. Trabajamos con lo que tu cuerpo puede dar hoy, y construimos desde ahí.</p>
+      </div>
+      <div class="diff-card">
+        <h3>Un espacio, no una cinta de correr</h3>
+        <p>No se trata de exigir más, sino de moverte mejor. Pequeños estímulos, bien pensados, pueden generar grandes cambios.</p>
       </div>
     </div>
   </div>
@@ -460,11 +443,17 @@ a[href*="wa.me"]:active{
       <div class="audience-head reveal">
         <h2>¿Te reconocés en alguna de estas historias? Hay un lugar para vos, sea cual sea tu punto de partida.</h2>
       </div>
-      <div class="audience-list reveal-stagger">
-        <div class="audience-item"><p>Hace años convivís con el mismo dolor y ya probaste de todo.</p></div>
-        <div class="audience-item"><p>Querés empezar a moverte, pero no sabés por dónde ni con quién.</p></div>
-        <div class="audience-item"><p>Volvés de una lesión y no sabés si estás forzando de más o de menos.</p></div>
-        <div class="audience-item"><p>Buscás un espacio que entienda tu etapa de vida, no una rutina genérica.</p></div>
+      <div class="audience-marquee">
+        <div class="audience-track" id="audienceTrack">
+          <div class="audience-item"><p>Hace años convivís con el mismo dolor y ya probaste de todo.</p></div>
+          <div class="audience-item"><p>Querés empezar a moverte, pero no sabés por dónde ni con quién.</p></div>
+          <div class="audience-item"><p>Volvés de una lesión y no sabés si estás forzando de más o de menos.</p></div>
+          <div class="audience-item"><p>Buscás un espacio que entienda tu etapa de vida, no una rutina genérica.</p></div>
+          <div class="audience-item" aria-hidden="true"><p>Hace años convivís con el mismo dolor y ya probaste de todo.</p></div>
+          <div class="audience-item" aria-hidden="true"><p>Querés empezar a moverte, pero no sabés por dónde ni con quién.</p></div>
+          <div class="audience-item" aria-hidden="true"><p>Volvés de una lesión y no sabés si estás forzando de más o de menos.</p></div>
+          <div class="audience-item" aria-hidden="true"><p>Buscás un espacio que entienda tu etapa de vida, no una rutina genérica.</p></div>
+        </div>
       </div>
       <p class="audience-close reveal">No hace falta tener un diagnóstico. Hace falta tener ganas de empezar.</p>
     </div>
@@ -596,10 +585,10 @@ a[href*="wa.me"]:active{
     });
   });
 
-  var diffTrack = document.getElementById('diffTrack');
-  if(diffTrack){
-    diffTrack.addEventListener('touchstart', function(){ diffTrack.classList.add('is-paused'); }, { passive:true });
-    diffTrack.addEventListener('touchend', function(){ diffTrack.classList.remove('is-paused'); });
+  var audienceTrack = document.getElementById('audienceTrack');
+  if(audienceTrack){
+    audienceTrack.addEventListener('touchstart', function(){ audienceTrack.classList.add('is-paused'); }, { passive:true });
+    audienceTrack.addEventListener('touchend', function(){ audienceTrack.classList.remove('is-paused'); });
   }
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
