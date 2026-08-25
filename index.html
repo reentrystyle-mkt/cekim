@@ -205,13 +205,14 @@ header{
 .audience-wrap{ padding:0 0 5.5rem; }
 .audience{
   background:var(--verde-oscuro); color:var(--crema);
-  padding:4rem 1.5rem; position:relative; overflow:hidden;
+  padding:2.6rem 1.5rem 4rem; position:relative; overflow:hidden;
   border-radius:28px;
 }
-@media (max-width:600px){ .audience{ border-radius:20px; padding:3rem 1.2rem; } }
+@media (max-width:600px){ .audience{ border-radius:20px; padding:2.2rem 1.2rem 3rem; } }
 .audience-watermark{
-  position:absolute; top:-4rem; right:-3rem; width:22rem; height:auto;
-  opacity:.07; pointer-events:none; z-index:0;
+  position:absolute; top:.5rem; left:50%; transform:translateX(-50%);
+  width:19rem; height:auto;
+  opacity:.1; pointer-events:none; z-index:0;
 }
 .audience > *{ position:relative; z-index:1; }
 .audience{ text-align:center; }
