@@ -80,9 +80,9 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:800; line-height:1.1; let
 /* ---------- brand mark ---------- */
 .mark{ display:inline-flex; align-items:center; text-decoration:none; line-height:1; }
 .logo-full{ height:38px; width:auto; display:block; }
-.footer-mark{ flex-direction:column; align-items:flex-start; gap:.5rem; }
-.logo-wordmark{ height:34px; width:auto; display:block; }
-.footer-mark-tagline{ font-family:var(--font-body); font-size:.66rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--sage); }
+.footer-mark{ flex-direction:column; align-items:flex-start; gap:.7rem; }
+.logo-wordmark{ height:52px; width:auto; display:block; filter:drop-shadow(0 0 22px rgba(245,246,243,.22)); }
+.footer-mark-tagline{ font-family:var(--font-body); font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--crema); opacity:.75; }
 @media (min-width:480px){ .logo-full{ height:44px; } }
 
 /* ---------- buttons ---------- */
@@ -111,21 +111,11 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:800; line-height:1.1; let
 /* ================= HEADER ================= */
 header{
   position:sticky; top:0; z-index:100;
-  background:linear-gradient(180deg, rgba(15,20,22,.45) 0%, rgba(15,20,22,0) 100%);
-  border-bottom:1px solid transparent;
-  transition:background .3s var(--ease), border-color .3s var(--ease), backdrop-filter .3s var(--ease);
-}
-header.is-scrolled{
-  background:rgba(245,246,243,.88);
+  background:rgba(245,246,243,.94);
   backdrop-filter:blur(10px);
-  border-bottom-color:var(--borde);
+  border-bottom:1px solid var(--borde);
 }
-header .logo-full{ filter:drop-shadow(0 2px 6px rgba(0,0,0,.4)); transition:filter .3s var(--ease); }
-header.is-scrolled .logo-full{ filter:none; }
-header .nav-links a, header .nav-burger{ color:var(--crema); border-color:rgba(245,246,243,.6); transition:color .3s var(--ease), border-color .3s var(--ease); }
-header.is-scrolled .nav-links a, header.is-scrolled .nav-burger{ color:var(--tinta); border-color:var(--tinta); }
-header .nav-links a{ text-shadow:0 1px 6px rgba(0,0,0,.5); }
-header.is-scrolled .nav-links a{ text-shadow:none; }
+header .nav-links a, header .nav-burger{ color:var(--tinta); border-color:var(--tinta); }
 .nav{ display:flex; align-items:center; justify-content:space-between; padding:1.05rem 0; }
 .nav-links{ display:none; gap:2rem; list-style:none; font-size:.95rem; font-weight:500; }
 .nav-links a{ text-decoration:none; position:relative; padding-bottom:2px; }
@@ -587,14 +577,6 @@ a[href*="wa.me"]:active{
 <script>
 (function(){
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  var siteHeader = document.querySelector('header');
-  var onScroll = function(){
-    if(window.scrollY > 40){ siteHeader.classList.add('is-scrolled'); }
-    else{ siteHeader.classList.remove('is-scrolled'); }
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive:true });
 
   var burgerBtn = document.getElementById('burgerBtn');
   var mobileMenu = document.getElementById('mobileMenu');
