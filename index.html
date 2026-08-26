@@ -331,6 +331,19 @@ a[href*="wa.me"]:active{
   border-color:#25D366 !important;
   color:#ffffff !important;
 }
+
+/* ================= AJUSTES DE TAMAÑO EN MOBILE ================= */
+@media (max-width:599px){
+  .hero-br{ display:none; }
+  .hero h1{ font-size:1.65rem; }
+  .diff-head h2{ font-size:1.2rem; }
+  .audience-br-d{ display:none; }
+  .audience-head h2{ font-size:.98rem; }
+  .audience-close{ font-size:.95rem; }
+}
+@media (min-width:600px){
+  .audience-br-m{ display:none; }
+}
 </style>
 </head>
 <body>
@@ -378,7 +391,7 @@ a[href*="wa.me"]:active{
         <img class="hero-banner-img" src="assets/studio-group.jpg" alt="Personas trabajando movimiento terapéutico con pelotas dentro del espacio CEKIM" loading="eager">
         <div class="hero-banner-overlay"></div>
         <div class="hero-copy">
-          <h1>Tu cuerpo no funciona por partes.<br>Funciona como <em>un sistema.</em></h1>
+          <h1>Tu cuerpo no funciona por partes. <br class="hero-br">Funciona como <em>un sistema.</em></h1>
           <p class="lede">Kinesiología, nutrición, salud mental y más, con mirada integral.<br>No hace falta estar lesionado para empezar.</p>
           <p class="hero-caption">Movimiento con criterio.</p>
         </div>
@@ -419,7 +432,7 @@ a[href*="wa.me"]:active{
     <div class="audience">
       <div class="audience-head reveal">
         <img src="assets/cekim-mark.png" alt="" class="audience-watermark" aria-hidden="true">
-        <h2>¿Te reconocés en alguna de estas historias?<br>Hay un lugar para vos, sea cual sea tu<br>punto de partida.</h2>
+        <h2>¿Te reconocés en alguna de estas historias? <br class="audience-br-d">Hay un lugar para vos, <br class="audience-br-m">sea cual sea tu <br class="audience-br-d">punto de partida.</h2>
       </div>
       <div class="audience-marquee">
         <div class="audience-track" id="audienceTrack">
