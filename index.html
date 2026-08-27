@@ -227,7 +227,8 @@ header .nav-links a, header .nav-burger{ color:var(--tinta); border-color:var(--
   display:flex; gap:1.25rem; width:max-content;
   animation:audience-scroll 30s linear infinite;
 }
-.audience-track.is-paused, .audience-marquee:hover .audience-track{ animation-play-state:paused; }
+.audience-track.is-paused{ animation-play-state:paused; }
+@media (hover:hover){ .audience-marquee:hover .audience-track{ animation-play-state:paused; } }
 @keyframes audience-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 .audience-item{
   flex:0 0 19rem;
@@ -608,6 +609,7 @@ a[href*="wa.me"]:active{
   if(audienceTrack){
     audienceTrack.addEventListener('touchstart', function(){ audienceTrack.classList.add('is-paused'); }, { passive:true });
     audienceTrack.addEventListener('touchend', function(){ audienceTrack.classList.remove('is-paused'); });
+    audienceTrack.addEventListener('touchcancel', function(){ audienceTrack.classList.remove('is-paused'); });
   }
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
